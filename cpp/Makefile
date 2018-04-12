@@ -6,6 +6,10 @@ CFLAGS = -Wall -O0 -g --std=c++11
 TARGET = test_alg
 LIBS = -lpthread -lssl -lcrypto
 ALG_FILE = $(in)
+SBIN = ./sbin
+
+MAIN_FILE = test_main.cpp
+
 
 %.o: %.c
 	$(CC) $(INC) $(CFLAGS) -c $< -o $@
@@ -13,7 +17,7 @@ ALG_FILE = $(in)
 	$(XX) $(INC) $(CFLAGS) -c $< -o $@
 
 PUBOBJ = mychiu.o
-SOURCES = $(wildcard ALG*.c ALG*.cpp)
+SOURCES = $(wildcard LeetCode*.c LeetCode*.cpp)
 OBJS = $(patsubst %.c,%.o,$(patsubst %.cpp,%.o,$(SOURCES)))
 TARGETS = $(patsubst %.o,%,$(OBJ))
 
