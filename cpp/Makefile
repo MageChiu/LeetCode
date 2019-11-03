@@ -25,7 +25,7 @@ OBJ = $(patsubst %.cpp,%.o,$(ALG_FILE))
 $(OBJ) : $(ALG_FILE)
 	$(XX) $(INC) $(CFLAGS) -c $< -o $@
 
-$(TARGET) : $(OBJ)
+$(TARGET) : $(OBJ) $(PUBOBJ)
 	@echo " make the $(TARGET)"
 	$(XX) $^ $(LIBS) -g -o $(TARGET)
 	rm -rf *.o

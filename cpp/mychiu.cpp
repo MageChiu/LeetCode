@@ -102,6 +102,19 @@ TreeNode* ChiuTool::creat_tree(std::vector<std::string> indata)
     return root;
 }
 
+ListNode* ChiuTool::create_list(std::vector<int> nums) {
+    if (nums.size() <= 0) {
+        return nullptr;
+    }
+    ListNode list_header(0);
+    ListNode *tmp_ptr = &list_header;
+    for (int i = 0; i < nums.size(); i++) {
+        tmp_ptr->next = new ListNode(nums[i]);
+        tmp_ptr = tmp_ptr->next;
+    }
+    return list_header.next;
+}
+
 
 int _utest()
 {
@@ -110,8 +123,4 @@ int _utest()
     TreeNode* test_root = ct.creat_tree(test_str);
     print_tree(test_root);
     return 0;
-}
-int main()
-{
-    _utest();
 }
