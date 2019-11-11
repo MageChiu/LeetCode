@@ -56,3 +56,5 @@ freeline_project_description.json
 
 # vscode
 .vscode/
+go/.idea/
+*/.idea/
