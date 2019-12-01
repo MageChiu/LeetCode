@@ -2,33 +2,7 @@
 
 ————————
 
-<!-- TOC -->
-
-- [50. Pow(x, n)](#50-powx-n)
-- [371. Sum of Two Integers](#371-sum-of-two-integers)
-- [412. Fizz Buzz](#412-fizz-buzz)
-- [461](#461)
-- [476 Number Complement](#476-number-complement)
-- [500. Keyboard Row](#500-keyboard-row)
-- [530. Minimum Absolute Difference in BST](#530-minimum-absolute-difference-in-bst)
-- [535. Encode and Decode TinyURL](#535-encode-and-decode-tinyurl)
-- [538. Convert BST to Greater Tree](#538-convert-bst-to-greater-tree)
-- [543. Diameter of Binary Tree](#543-diameter-of-binary-tree)
-- [557. Reverse Words in a String III](#557-reverse-words-in-a-string-iii)
-- [575 Distribute Candies](#575-distribute-candies)
-- [673. Number of Longest Increasing Subsequence](#673-number-of-longest-increasing-subsequence)
-- [674. Longest Continuous Increasing Subsequence](#674-longest-continuous-increasing-subsequence)
-- [697. Degree of an Array](#697-degree-of-an-array)
-- [728. Self Dividing Numbers](#728-self-dividing-numbers)
-- [724. Find Pivot Index](#724-find-pivot-index)
-- [733. Flood Fill](#733-flood-fill)
-- [744. Find Smallest Letter Greater Than Target](#744-find-smallest-letter-greater-than-target)
-- [744. Find Smallest Letter Greater Than Target](#744-find-smallest-letter-greater-than-target)
-- [747. Largest Number At Least Twice of Others](#747-largest-number-at-least-twice-of-others)
-- [760. Find Anagram Mappings](#760-find-anagram-mappings)
-- [762. Prime Number of Set Bits in Binary Representation](#762-prime-number-of-set-bits-in-binary-representation)
-
-<!-- /TOC -->
+<!-- TOC -->autoauto- [1. Two Sum](#1-two-sum)auto- [002. Add Two Numbers](#002-add-two-numbers)auto- [22. Generate Parentheses](#22-generate-parentheses)auto- [41. First Missing Positive](#41-first-missing-positive)auto- [50. Pow(x, n)](#50-powx-n)auto- [371. Sum of Two Integers](#371-sum-of-two-integers)auto- [374. Guess Number Higher or Lower](#374-guess-number-higher-or-lower)auto- [412. Fizz Buzz](#412-fizz-buzz)auto- [461](#461)auto- [476 Number Complement](#476-number-complement)auto- [500. Keyboard Row](#500-keyboard-row)auto- [530. Minimum Absolute Difference in BST](#530-minimum-absolute-difference-in-bst)auto- [535. Encode and Decode TinyURL](#535-encode-and-decode-tinyurl)auto- [538. Convert BST to Greater Tree](#538-convert-bst-to-greater-tree)auto- [543. Diameter of Binary Tree](#543-diameter-of-binary-tree)auto- [557. Reverse Words in a String III](#557-reverse-words-in-a-string-iii)auto- [575 Distribute Candies](#575-distribute-candies)auto- [673. Number of Longest Increasing Subsequence](#673-number-of-longest-increasing-subsequence)auto- [674. Longest Continuous Increasing Subsequence](#674-longest-continuous-increasing-subsequence)auto- [697. Degree of an Array](#697-degree-of-an-array)auto- [728. Self Dividing Numbers](#728-self-dividing-numbers)auto- [724. Find Pivot Index](#724-find-pivot-index)auto- [733. Flood Fill](#733-flood-fill)auto- [744. Find Smallest Letter Greater Than Target](#744-find-smallest-letter-greater-than-target)auto- [744. Find Smallest Letter Greater Than Target](#744-find-smallest-letter-greater-than-target-1)auto- [747. Largest Number At Least Twice of Others](#747-largest-number-at-least-twice-of-others)auto- [760. Find Anagram Mappings](#760-find-anagram-mappings)auto- [762. Prime Number of Set Bits in Binary Representation](#762-prime-number-of-set-bits-in-binary-representation)autoauto<!-- /TOC -->
 —————————
 
 
@@ -61,6 +35,24 @@ Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
 ```
+
+
+# 22. Generate Parentheses
+Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+
+For example, given n = 3, a solution set is:
+
+[
+  "((()))",
+  "(()())",
+  "(())()",
+  "()(())",
+  "()()()"
+]
+
+file: LeetCode022_GenerateParentheses.cpp
+
+任何适合，从左起看过去，左括号的数目都一定大于等于右括号，最终二者是相等的。
 
 
 # 41. First Missing Positive

@@ -19,9 +19,9 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-find . -name 'build' | xargs -i rm -rf {}
-find . -name 'cmake-build-*' | xargs -i rm -rf {}
-find . -name 'core*' | xargs -i rm -rf {}
+# find . -name 'build' | xargs -i rm -rf {}
+# find . -name 'cmake-build-*' | xargs -i rm -rf {}
+# find . -name 'core*' | xargs -i rm -rf {}
 #script_dir=`dirname $0`
 script_dir=`pwd`
 echo "script dir is $script_dir"
@@ -37,5 +37,32 @@ do
     cd $script_dir
 done
 
+
+function clean_build_file {
+    echo "clean build file start...."
+    need_clean_dir=('build' 'cmake-build-*' 'core*')
+    for _dir_name in ${need_clean_dir[@]};
+    do
+        for _dest_dir in `find . -name "${_dir_name}"`;
+        do
+            rm -rf ${_dest_dir}
+        done
+    done
+    echo "clean build file end."
+}
+
+function clean_file_e {
+    need_chmod_type=('cpp' 'h')
+    for file_type in ${need_chmod_type[*]};
+    do
+        for dest_file in `find . -name "*.${file_type}"`
+        do
+            chmod u-x $dest_file
+        done
+    done
+}
+
+clean_build_file
+clean_file_e
 
 

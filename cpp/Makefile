@@ -4,7 +4,8 @@ XX = g++
 INC = -I./
 CFLAGS = -Wall -O0 -g --std=c++11
 TARGET = test_alg
-LIBS = -lpthread -lssl -lcrypto
+# LIBS = -lpthread -lssl -lcrypto
+LIBS = -lpthread
 ALG_FILE = $(in)
 SBIN = ./sbin
 
@@ -42,6 +43,10 @@ test: $(TARGET)
 
 clean:
 	rm -rf *.o $(TARGET)
+
+debug: $(OBJ) $(PUBOBJ)
+	@echo " make the $(TARGET)"
+	$(XX) $^ $(LIBS) -g -o $(TARGET)
 
 
 
