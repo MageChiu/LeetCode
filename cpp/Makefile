@@ -4,13 +4,26 @@ XX = g++
 INC = -I./
 CFLAGS = -Wall -O0 -g --std=c++11
 TARGET = test_alg
+PUBTARGET = chiutool
 # LIBS = -lpthread -lssl -lcrypto
-LIBS = -lpthread
+LIBS = -lpthread -L./
 ALG_FILE = $(in)
 SBIN = ./sbin
 
 MAIN_FILE = test_main.cpp
 
+
+ifdef DEBUG
+	CFLAGS += -DDEBUG=1 -O0 -ggdb
+	RELMODE = debug
+else
+	CFLAGS += -DDEBUG=0 -O0 -s
+	RELMODE = release
+endif
+
+ifdef CHIUTOOL
+	CFLAGS += -DCHIUTOOL
+endif
 
 %.o: %.c
 	$(CC) $(INC) $(CFLAGS) -c $< -o $@
@@ -42,11 +55,15 @@ test: $(TARGET)
 	./$(TARGET)
 
 clean:
-	rm -rf *.o $(TARGET)
+	rm -rf *.o $(TARGET) $(PUBTARGET)
 
 debug: $(OBJ) $(PUBOBJ)
 	@echo " make the $(TARGET)"
 	$(XX) $^ $(LIBS) -g -o $(TARGET)
+
+$(PUBTARGET): $(PUBOBJ)
+	@echo " make the chiutool"
+	$(XX) $^ -DDEBUG -DCHIUTOOL $(LIBS) -g -o chiutool
 
 
 

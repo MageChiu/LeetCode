@@ -20,6 +20,7 @@
 #include <time.h>
 #include <iostream>
 #include <sstream>
+#include <vector>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -115,6 +116,24 @@ ListNode* ChiuTool::create_list(std::vector<int> nums) {
     return list_header.next;
 }
 
+template <typename T>
+void Common::print_data(const std::vector<T>& data) {
+    std::cout << "[";
+    for (int i = 0; i< data.size(); i++) {
+        if (i == data.size() - 1) {
+            std::cout << data[i] ;
+        } else {
+            std::cout << data[i] << " , ";
+        }
+    }
+    std::cout << " ]" << std::endl;
+}
+
+template <typename T>
+void Common::print_data(T data) {
+    std::cout << "[" << data << "]" << std::endl;
+}
+
 
 int _utest()
 {
@@ -124,3 +143,22 @@ int _utest()
     print_tree(test_root);
     return 0;
 }
+
+int _utest_common() {
+    std::vector<int> test = {1,2,3,4,5};
+    Common::print_data(test);
+
+    int k = 12;
+    Common::print_data(k);
+}
+
+
+#ifdef CHIUTOOL
+
+int main(int argc, char const *argv[])
+{
+    _utest_common();
+    return 0;
+}
+
+#endif

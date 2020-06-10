@@ -63,6 +63,15 @@ private:
 };
 
 
+class Common
+{
+public:
+    template <typename T>
+    static void print_data(const std::vector<T>& data);
+    template <typename T>
+    static void print_data(T data);
+};
+
 
 #endif /* __MY_CHIU_H__ */
 
