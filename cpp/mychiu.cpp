@@ -150,6 +150,10 @@ int _utest_common() {
 
     int k = 12;
     Common::print_data(k);
+
+    std::vector<bool> test_bool = {true};
+
+    Common::print_data(test_bool);
 }
 
 
