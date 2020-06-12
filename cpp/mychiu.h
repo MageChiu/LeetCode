@@ -70,6 +70,9 @@ public:
     static void print_data(const std::vector<T>& data);
     template <typename T>
     static void print_data(T data);
+
+    template <typename T>
+    static bool check_vector_equal(const std::vector<T>& v1, const std::vector<T>& v2);
 };
 
 

@@ -134,6 +134,24 @@ void Common::print_data(T data) {
     std::cout << "[" << data << "]" << std::endl;
 }
 
+template <typename T>
+bool Common::check_vector_equal(const std::vector<T>& v1, const std::vector<T>& v2) {
+    size_t l1 = v1.size();
+    size_t l2 = v2.size();
+    if (l1 != l2) {
+        std::cout << "[ len not equal ]" << std::endl;
+        return false;
+    }
+    bool flag = true;
+    for (size_t ui = 0; ui < l1; ui++) {
+        if (v1[ui] != v2[ui]) {
+            std::cout << "v1["<< v1[ui] <<"] and v2["<< v2[ui] << "] at [" << ui << "] not equal" << std::endl;
+            flag = false;
+        }
+    }
+    return flag;
+}
+
 
 int _utest()
 {
