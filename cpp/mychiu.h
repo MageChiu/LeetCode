@@ -71,10 +71,16 @@ public:
     template <typename T>
     static void print_data(T data);
 
+    static void print_data(TreeNode* root);
+
     template <typename T>
     static bool check_vector_equal(const std::vector<T>& v1, const std::vector<T>& v2);
+
+
 };
 
+
+void printInorder(TreeNode *root, int height, std::string to, int len);
 
 #endif /* __MY_CHIU_H__ */
 
