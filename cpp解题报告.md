@@ -301,6 +301,24 @@ nums[i] will be an integer between 0 and 49,999.
 ```
 > file: ALG697_DegreeofArray.cpp
 
+# 709. To Lower Case
+Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.
+
+ 
+
+Example 1:
+
+Input: "Hello"
+Output: "hello"
+Example 2:
+
+Input: "here"
+Output: "here"
+Example 3:
+
+Input: "LOVELY"
+Output: "lovely"
+> file: LeetCode709_ToLowerCase.cpp
 
 # 728. Self Dividing Numbers
 
@@ -402,3 +420,49 @@ L, R will be integers L <= R in the range [1, 10^6].
 R - L will be at most 10000.
 
 > file: ALG762_PrimeNumberSetBitsBinaryRepresentation.cpp
+
+
+# 1021. Remove Outermost Parentheses
+A valid parentheses string is either empty (""), "(" + A + ")", or A + B, where A and B are valid parentheses strings, and + represents string concatenation.  For example, "", "()", "(())()", and "(()(()))" are all valid parentheses strings.
+
+A valid parentheses string S is primitive if it is nonempty, and there does not exist a way to split it into S = A+B, with A and B nonempty valid parentheses strings.
+
+Given a valid parentheses string S, consider its primitive decomposition: S = P_1 + P_2 + ... + P_k, where P_i are primitive valid parentheses strings.
+
+Return S after removing the outermost parentheses of every primitive string in the primitive decomposition of S.
+
+ 
+
+Example 1:
+
+Input: "(()())(())"
+Output: "()()()"
+Explanation: 
+The input string is "(()())(())", with primitive decomposition "(()())" + "(())".
+After removing outer parentheses of each part, this is "()()" + "()" = "()()()".
+Example 2:
+
+Input: "(()())(())(()(()))"
+Output: "()()()()(())"
+Explanation: 
+The input string is "(()())(())(()(()))", with primitive decomposition "(()())" + "(())" + "(()(()))".
+After removing outer parentheses of each part, this is "()()" + "()" + "()(())" = "()()()()(())".
+Example 3:
+
+Input: "()()"
+Output: ""
+Explanation: 
+The input string is "()()", with primitive decomposition "()" + "()".
+After removing outer parentheses of each part, this is "" + "" = "".
+ 
+
+Note:
+
+S.length <= 10000
+S[i] is "(" or ")"
+S is a valid parentheses string
+
+file: LeetCode1021_RemoveOutermostParentheses.cpp
+
+
+
