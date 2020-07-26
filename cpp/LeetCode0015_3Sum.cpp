@@ -62,6 +62,7 @@ int main(int argc, char const *argv[])
 {
     // vector<int> test_data = {-1, 0, 1, 2, -1, -4};
     vector<int> test_data = {0,0,0,0,0,0,0,0,0,0,0};
+    test_data = {0, 0, 0};
     Solution so;
     vector<vector<int>> result = so.threeSum(test_data);
     for (int i =0; i < result.size(); i++) {
